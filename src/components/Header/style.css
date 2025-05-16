@@ -1,0 +1,78 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #121212;
+   color: #fff;
+}
+
+.Header {
+   background-color: #1A1A1A;
+   height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 40px;
+   position: relative;
+}
+
+.logo img {
+   width: 160px;
+   height: auto;
+}
+
+.navigation {
+   display: flex;
+   gap: 40px;
+   font-size: 16px;
+}
+
+.navigation a {
+   color: #ffffff;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+   color: #f97316;
+}
+
+.burger {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+   gap: 5px;
+}
+
+.burger .line {
+   width: 25px;
+   height: 3px;
+   background-color: white;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+   .navigation {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background-color: #1A1A1A;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px;
+      gap: 20px;
+      display: none;
+   }
+
+   .navigation.open {
+      display: flex;
+   }
+
+   .burger {
+      display: flex;
+   }
+}
