@@ -1,0 +1,74 @@
+.booking-section {
+   max-width: 600px;
+   margin: 40px auto;
+   padding: 20px;
+   background-color: #222;
+   border-radius: 8px;
+   color: #fff;
+}
+
+.booking-section h2 {
+   text-align: center;
+   color: #f97316;
+   margin-bottom: 20px;
+}
+
+.booking-form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.booking-form input {
+   padding: 12px;
+   border-radius: 5px;
+   border: none;
+   font-size: 1rem;
+}
+
+.booking-form input:focus {
+   outline: 2px solid #f97316;
+   background-color: #333;
+   color: #fff;
+}
+
+.booking-form button {
+   padding: 14px;
+   background-color: #f97316;
+   border: none;
+   color: #fff;
+   font-size: 1.1rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+.booking-form button:disabled {
+   background-color: #c75c0b;
+   cursor: not-allowed;
+}
+
+.booking-form button:hover:not(:disabled) {
+   background-color: #c75c0b;
+}
+
+.success-message {
+   color: #4ade80;
+   /* зеленый */
+   text-align: center;
+   margin-top: 15px;
+}
+
+.error-message {
+   color: #f87171;
+   /* красный */
+   text-align: center;
+   margin-top: 15px;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+   .booking-section {
+      margin: 20px 10px;
+   }
+}
