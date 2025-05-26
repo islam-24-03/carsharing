@@ -1,14 +1,21 @@
-import React from "react";
 import Header from "./components/Header/Header";
+import About from "./components/about/About";
+import Services from "./components/services/Services";
 import BookingForm from "./components/body/BookingForm";
+import Contact from "./components/contact/Contact";
+import "./components/body/style.css"; // Импорт стилей
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <>
       <Header />
+      <div id="home"></div>
+      <About />
+      <Services />
       <BookingForm />
-    </div>
+      <Contact />
+    </>
   );
-}
+};
 
 export default App;

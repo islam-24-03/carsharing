@@ -1,6 +1,6 @@
-// src/data/bookingApi.js
+// bookingApi.js
 
-export const sendBooking = async (bookingData) => {
+const sendBooking = async (bookingData) => {
    try {
       const response = await fetch("https://your-backend-url.com/api/bookings", {
          method: "POST",
@@ -19,3 +19,5 @@ export const sendBooking = async (bookingData) => {
       throw error;
    }
 };
+
+export default sendBooking;

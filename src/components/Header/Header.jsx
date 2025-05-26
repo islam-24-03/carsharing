@@ -1,23 +1,30 @@
+
 import React, { useState } from "react";
-import logo from "../Header/img/logo.png";
-import "./style.css";
+import './Header.css'; // ✅ верно
 
 const Header = () => {
    const [isOpen, setIsOpen] = useState(false);
 
    const toggleMenu = () => setIsOpen(!isOpen);
 
+   const scrollToSection = (id) => {
+      const section = document.getElementById(id);
+      if (section) {
+         section.scrollIntoView({ behavior: "smooth" });
+         setIsOpen(false);
+      }
+   };
+
    return (
       <header className="Header">
-         <div className="logo">
-            <img src={logo} alt="II Rental Auto Logo" />
-         </div>
+         <div className="logo">II Rental Auto</div>
 
          <nav className={`navigation ${isOpen ? "open" : ""}`}>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a onClick={() => scrollToSection("home")}>Home</a>
+            <a onClick={() => scrollToSection("about")}>About</a>
+            <a onClick={() => scrollToSection("services")}>Services</a>
+            <a onClick={() => scrollToSection("booking")}>Book</a>
+            <a onClick={() => scrollToSection("contact")}>Contact</a>
          </nav>
 
          <div className="burger" onClick={toggleMenu}>
