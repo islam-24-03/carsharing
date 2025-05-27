@@ -1,0 +1,22 @@
+.about-section {
+   background-color: #1a1a1a;
+   padding: 32px;
+   border-radius: 16px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+   transition: transform 0.3s ease;
+}
+
+.about-section:hover {
+   transform: scale(1.01);
+}
+
+.about-section h2 {
+   font-size: 28px;
+   color: #ffffff;
+}
+
+.about-section p {
+   font-size: 16px;
+   color: #cccccc;
+   line-height: 1.8;
+}

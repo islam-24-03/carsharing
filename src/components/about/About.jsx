@@ -1,9 +1,10 @@
 import React from "react";
+import './style.css';
 
 const About = () => {
    return (
       <main className="MainContent" id="about">
-         <section className="about-section">
+         <section className="about-section container">
             <h2>About II Rental Auto</h2>
             <p>
                II Rental Auto is your trusted car rental service providing a wide range
