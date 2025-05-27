@@ -8,7 +8,7 @@ const OurCars = () => {
    useEffect(() => {
       const fetchCars = async () => {
          try {
-            const response = await fetch("https://your-backend-url.com/api/cars");
+            const response = await fetch("http://localhost:5000/api/cars");
             const data = await response.json();
             setCars(data);
          } catch (error) {
