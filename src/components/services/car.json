@@ -1,0 +1,10 @@
+{
+   "title": "Toyota Camry",
+   "shortDescription": "Comfortable and reliable",
+   "description": "A reliable car suitable for long journeys and city rides.",
+   "year": 2022,
+   "price": 2500,
+   "fuel": "Petrol",
+   "transmission": "Automatic",
+   "image": "https://your-image-url.com/car.jpg"
+}

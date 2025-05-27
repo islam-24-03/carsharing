@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header";
 import About from "./components/about/About";
-import Services from "./components/services/Services";
+import OurCars from "./components/services/OurCars";
 import BookingForm from "./components/body/BookingForm";
 import Contact from "./components/contact/Contact";
 import "./components/body/style.css"; // Импорт стилей
@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <div id="home"></div>
       <About />
-      <Services />
+      <OurCars />
       <BookingForm />
       <Contact />
     </>
