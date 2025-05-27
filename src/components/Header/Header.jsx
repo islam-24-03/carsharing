@@ -1,9 +1,17 @@
-
-import React, { useState } from "react";
-import './Header.css'; // ✅ верно
+import React, { useState, useEffect } from "react";
+import './Header.css';
 
 const Header = () => {
    const [isOpen, setIsOpen] = useState(false);
+   const [scrolled, setScrolled] = useState(false);
+
+   useEffect(() => {
+      const handleScroll = () => {
+         setScrolled(window.scrollY > 10);
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+   }, []);
 
    const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -16,21 +24,25 @@ const Header = () => {
    };
 
    return (
-      <header className="Header">
-         <div className="logo">II Rental Auto</div>
+      <header className={`Header ${scrolled ? "scrolled" : ""}`}>
+         <div className="logo">
+            <span className="logo-highlight">II</span> Rental Auto
+         </div>
 
          <nav className={`navigation ${isOpen ? "open" : ""}`}>
-            <a onClick={() => scrollToSection("home")}>Home</a>
-            <a onClick={() => scrollToSection("about")}>About</a>
-            <a onClick={() => scrollToSection("services")}>Services</a>
-            <a onClick={() => scrollToSection("booking")}>Book</a>
-            <a onClick={() => scrollToSection("contact")}>Contact</a>
+            <div className="nav-links">
+               <a onClick={() => scrollToSection("home")} className="nav-link">Home</a>
+               <a onClick={() => scrollToSection("about")} className="nav-link">About</a>
+               <a onClick={() => scrollToSection("services")} className="nav-link">Services</a>
+               <a onClick={() => scrollToSection("booking")} className="nav-link">Book Now</a>
+               <a onClick={() => scrollToSection("contact")} className="nav-link contact-link">Contact</a>
+            </div>
          </nav>
 
-         <div className="burger" onClick={toggleMenu}>
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
+         <div className={`burger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
+            <div className="line line1" />
+            <div className="line line2" />
+            <div className="line line3" />
          </div>
       </header>
    );
