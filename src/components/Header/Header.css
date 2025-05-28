@@ -1,78 +1,194 @@
-* {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+.MainContent {
+  padding-top: 90px; /* Высота шапки */
+  margin-top: 0;
 }
 
-body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background-color: #121212;
-   color: #fff;
+@media (max-width: 768px) {
+  .MainContent {
+    padding-top: 70px; /* Меньшая выста шапки в мобильной версии */
+  }
+}
+:root {
+   --primary-color: #4dabf7;
+   --primary-hover: #3a8fd4;
+   --text-color: #f8f9fa;
+   --bg-color: #1a1a1a;
+   --bg-scrolled: rgba(26, 26, 26, 0.95);
+   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .Header {
-   background-color: #1A1A1A;
-   height: 80px;
+   background-color: var(--bg-color);
+   height: 90px;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 0 40px;
-   position: relative;
+   padding: 0 5%;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 1000;
+   transition: var(--transition);
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
-   width: 160px;
-   height: auto;
+.Header.scrolled {
+   height: 70px;
+   background-color: var(--bg-scrolled);
+   backdrop-filter: blur(10px);
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: var(--text-color);
+   letter-spacing: 1px;
+   z-index: 1001;
+}
+
+.logo-highlight {
+   color: var(--primary-color);
 }
 
 .navigation {
    display: flex;
-   gap: 40px;
-   font-size: 16px;
 }
 
-.navigation a {
-   color: #ffffff;
+.nav-links {
+   display: flex;
+   gap: 2rem;
+   align-items: center;
+}
+
+.nav-link {
+   color: var(--text-color);
    text-decoration: none;
-   transition: color 0.3s ease;
+   font-weight: 500;
+   font-size: 1.1rem;
+   position: relative;
+   padding: 0.5rem 0;
+   transition: var(--transition);
 }
 
-.navigation a:hover {
-   color: #f97316;
+.nav-link:hover {
+   color: var(--primary-color);
 }
 
+.nav-link::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background-color: var(--primary-color);
+   transition: var(--transition);
+}
+
+.nav-link:hover::after {
+   width: 100%;
+}
+
+.contact-link {
+   background-color: var(--primary-color);
+   color: white;
+   padding: 0.6rem 1.5rem;
+   border-radius: 50px;
+   transition: var(--transition);
+}
+
+.contact-link:hover {
+   background-color: var(--primary-hover);
+   color: white;
+   transform: translateY(-2px);
+}
+
+.contact-link::after {
+   display: none;
+}
+
+/* Burger Menu */
 .burger {
    display: none;
    flex-direction: column;
+   justify-content: space-between;
+   width: 30px;
+   height: 21px;
    cursor: pointer;
-   gap: 5px;
+   z-index: 1001;
+   position: relative;
 }
 
-.burger .line {
-   width: 25px;
+.line {
    height: 3px;
-   background-color: white;
+   width: 100%;
+   background-color: var(--text-color);
+   transition: var(--transition);
+   border-radius: 3px;
 }
 
-/* Адаптив */
+.burger.open .line1 {
+   transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burger.open .line2 {
+   opacity: 0;
+}
+
+.burger.open .line3 {
+   transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Mobile Menu */
 @media (max-width: 768px) {
+   .Header {
+      padding: 0 7%;
+   }
+
    .navigation {
-      position: absolute;
-      top: 80px;
-      right: 0;
-      background-color: #1A1A1A;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background-color: var(--bg-scrolled);
+      backdrop-filter: blur(10px);
       flex-direction: column;
-      width: 100%;
-      padding: 20px;
-      gap: 20px;
-      display: none;
+      justify-content: center;
+      align-items: center;
+      transition: var(--transition);
+      z-index: 1000;
    }
 
    .navigation.open {
-      display: flex;
+      right: 0;
+   }
+
+   .nav-links {
+      flex-direction: column;
+      gap: 2.5rem;
+   }
+
+   .nav-link {
+      font-size: 1.3rem;
    }
 
    .burger {
       display: flex;
+   }
+
+   .Header.scrolled {
+      height: 70px;
+   }
+}
+
+@media (max-width: 480px) {
+   .navigation {
+      width: 85%;
+   }
+
+   .logo {
+      font-size: 1.5rem;
    }
 }

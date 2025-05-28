@@ -1,0 +1,90 @@
+/* Contact.css */
+.contact-container {
+   max-width: 400px;
+   margin: 0 auto;
+   padding: 1rem;
+}
+
+.contact-form {
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+   background: #111;
+   padding: 1.5rem;
+   border-radius: 8px;
+}
+
+.contact-form h3 {
+   color: #fff;
+   margin: 0 0 1rem 0;
+   font-size: 1.2rem;
+   font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+   padding: 0.6rem;
+   background: #222;
+   border: 1px solid #333;
+   border-radius: 4px;
+   color: #fff;
+   font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+   outline: none;
+   border-color: #555;
+}
+
+.contact-form textarea {
+   resize: vertical;
+   min-height: 80px;
+}
+
+.contact-form button {
+   padding: 0.6rem;
+   background: #000;
+   color: #fff;
+   border: 1px solid #333;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 0.9rem;
+   transition: all 0.2s;
+}
+
+.contact-form button:hover {
+   background: #222;
+}
+
+.contact-form button:disabled {
+   opacity: 0.7;
+   cursor: not-allowed;
+}
+
+.status {
+   padding: 0.4rem;
+   text-align: center;
+   border-radius: 4px;
+   font-size: 0.8rem;
+}
+
+.status.success {
+   background: rgba(0, 100, 0, 0.2);
+   color: #0f0;
+}
+
+.status.error {
+   background: rgba(100, 0, 0, 0.2);
+   color: #f00;
+}
+
+@media (max-width: 480px) {
+   .contact-form {
+      padding: 1rem;
+   }
+   
+   .contact-form h3 {
+      font-size: 1.1rem;
+   }
+}

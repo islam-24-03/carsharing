@@ -1,22 +1,122 @@
 .about-section {
-   background-color: #1a1a1a;
-   padding: 32px;
-   border-radius: 16px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-   transition: transform 0.3s ease;
+   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+   padding: 48px;
+   border-radius: 24px;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+   transition: all 0.4s ease;
+   border: 1px solid rgba(255, 255, 255, 0.05);
+   margin: 40px auto;
+   max-width: 1200px;
 }
 
 .about-section:hover {
-   transform: scale(1.01);
+   transform: translateY(-5px);
+   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
-.about-section h2 {
-   font-size: 28px;
+.about-content {
+   display: flex;
+   flex-direction: column;
+   gap: 32px;
+}
+
+.about-title {
+   font-size: 2.5rem;
    color: #ffffff;
+   margin-bottom: 16px;
+   font-weight: 700;
+   position: relative;
+   display: inline-block;
 }
 
-.about-section p {
-   font-size: 16px;
-   color: #cccccc;
+.title-highlight {
+   color: #4dabf7;
+}
+
+.about-title::after {
+   content: '';
+   position: absolute;
+   bottom: -10px;
+   left: 0;
+   width: 60px;
+   height: 4px;
+   background: #4dabf7;
+   border-radius: 2px;
+}
+
+.about-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 40px;
+}
+
+.about-text {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.about-paragraph {
+   font-size: 1.1rem;
+   color: #e0e0e0;
    line-height: 1.8;
+   margin: 0;
+}
+
+.about-features {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+}
+
+.feature-item {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   background: rgba(255, 255, 255, 0.05);
+   padding: 16px;
+   border-radius: 12px;
+   transition: all 0.3s ease;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-item:hover {
+   background: rgba(77, 171, 247, 0.1);
+   transform: translateY(-3px);
+}
+
+.feature-icon {
+   font-size: 1.5rem;
+   background: rgba(77, 171, 247, 0.2);
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.feature-item span {
+   color: #ffffff;
+   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+   .about-grid {
+      grid-template-columns: 1fr;
+   }
+   
+   .about-section {
+      padding: 32px 24px;
+   }
+   
+   .about-title {
+      font-size: 2rem;
+   }
+}
+
+@media (max-width: 480px) {
+   .about-features {
+      grid-template-columns: 1fr;
+   }
 }
