@@ -1,0 +1,142 @@
+.pricing {
+  padding: 80px 0;
+  background: #1a1a1a; /* Темный фон как в Header */
+  text-align: center;
+  color: #fff; /* Белый текст по умолчанию */
+}
+
+.pricing h2 {
+  font-size: 2.5rem;
+  color: #fff; /* Белый заголовок */
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: #cccccc; /* Светло-серый подзаголовок */
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+.tariffs-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.tariff-card {
+  background: #2d2d2d; /* Темные карточки */
+  border-radius: 10px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Более темная тень */
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid #333; /* Граница темнее фона */
+}
+
+.tariff-card.popular {
+  border: 1px solid #4dabf7;
+  transform: scale(1.05);
+  background: #333; /* Чуть светлее для акцента */
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #4dabf7;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.tariff-card h3 {
+  color: #fff; /* Белый текст */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4dabf7; /* Акцентный цвет */
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #aaaaaa; /* Серый текст */
+  margin-bottom: 25px;
+  min-height: 50px;
+}
+
+.features-list {
+  text-align: left;
+  margin: 25px 0;
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  color: #e0e0e0; /* Светло-серый текст */
+}
+
+.features-list .icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.features-list .available {
+  color: #4CAF50; /* Зеленая галочка */
+}
+
+.features-list .not-available {
+  color: #F44336; /* Красный крестик */
+}
+
+.select-button {
+  width: 100%;
+  padding: 12px;
+  background: #4dabf7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-button:hover {
+  background: #3a8fd4;
+}
+
+@media (max-width: 768px) {
+  .tariffs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tariff-card {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .tariff-card.popular {
+    transform: none;
+  }
+}
+/* Плавный переход для темной темы */
+.tariff-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Эффект при наведении */
+.tariff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
