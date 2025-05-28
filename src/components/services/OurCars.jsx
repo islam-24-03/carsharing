@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './style.css';
 
+const fallbackImage = "https://via.placeholder.com/300?text=No+Image";
+
 const OurCars = () => {
    const [cars, setCars] = useState([]);
    const [selectedCar, setSelectedCar] = useState(null);
@@ -25,14 +27,26 @@ const OurCars = () => {
             <h2>Our Cars</h2>
             <div className="car-grid">
                {cars.length > 0 ? (
-                  cars.map((car, index) => (
-                     <div className="car-card" key={index}>
-                        <img src={car.image} alt={car.title} className="car-image" />
-                        <h3>{car.title}</h3>
-                        <p>{car.shortDescription}</p>
-                        <button onClick={() => setSelectedCar(car)}>Подробнее</button>
-                     </div>
-                  ))
+                  cars.map((car, index) => {
+                     const imageSrc = car.image?.startsWith('http')
+                        ? car.image
+                        : car.image
+                           ? `http://localhost:5000${car.image}`
+                           : fallbackImage;
+
+                     return (
+                        <div className="car-card" key={index}>
+                           <img
+                              className="car-image"
+                              src={imageSrc}
+                              alt={car.title}
+                           />
+                           <h3>{car.title}</h3>
+                           <p>{car.shortDescription}</p>
+                           <button onClick={() => setSelectedCar(car)}>Подробнее</button>
+                        </div>
+                     );
+                  })
                ) : (
                   <p>Loading cars...</p>
                )}
@@ -42,9 +56,20 @@ const OurCars = () => {
                <div className="modal-overlay" onClick={() => setSelectedCar(null)}>
                   <div className="car-modal" onClick={(e) => e.stopPropagation()}>
                      <button className="close-btn" onClick={() => setSelectedCar(null)}>×</button>
-                     <img src={selectedCar.image} alt={selectedCar.title} />
+                     <img
+                        className="car-image"
+                        src={
+                           selectedCar.image?.startsWith('http')
+                              ? selectedCar.image
+                              : selectedCar.image
+                                 ? `http://localhost:5000${selectedCar.image}`
+                                 : fallbackImage
+                        }
+                        alt={selectedCar.title}
+                     />
                      <h3>{selectedCar.title}</h3>
                      <p>{selectedCar.description}</p>
+                     <p><strong>Status:</strong> {selectedCar.isBooked ? "Занята" : "Свободна"}</p>
                      <ul>
                         <li><strong>Year:</strong> {selectedCar.year}</li>
                         <li><strong>Price per day:</strong> {selectedCar.price} сом</li>

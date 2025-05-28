@@ -6,7 +6,7 @@ import LoyaltyProgram from "./components/LoyaltyProgram/LoyaltyProgram";
 import OurCars from "./components/services/OurCars";
 import BookingForm from "./components/body/BookingForm";
 import Contact from "./components/contact/Contact";
-import "./components/body/style.css"; 
+import "./components/body/style.css";
 
 const App = () => {
   return (
@@ -15,10 +15,10 @@ const App = () => {
       <div id="home"></div>
       <About />
       <OurCars />
+      <BookingForm />
       <Pricing />
       <Calculator />
       <LoyaltyProgram />
-      <BookingForm />
       <Contact />
     </>
   );

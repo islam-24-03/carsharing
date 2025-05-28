@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import  sendBooking  from './data/data';
+import sendBooking from './data/data';
 
 const BookingForm = () => {
    const [formData, setFormData] = useState({
@@ -40,11 +40,45 @@ const BookingForm = () => {
          <section className="booking-section">
             <h2>Book Your Rental Car</h2>
             <form className="booking-form" onSubmit={handleSubmit}>
-               <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
-               <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-               <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
-               <input type="text" name="carModel" placeholder="Car Model" value={formData.carModel} onChange={handleChange} required />
-               <input type="date" name="rentalDate" value={formData.rentalDate} onChange={handleChange} required />
+               <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+               />
+               <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+               />
+               <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+               />
+               <input
+                  type="text"
+                  name="carModel"
+                  placeholder="Car Model"
+                  value={formData.carModel}
+                  onChange={handleChange}
+                  required
+               />
+               <input
+                  type="date"
+                  name="rentalDate"
+                  value={formData.rentalDate}
+                  onChange={handleChange}
+                  required
+               />
                <button type="submit" disabled={status === "loading"}>
                   {status === "loading" ? "Booking..." : "Book Now"}
                </button>
