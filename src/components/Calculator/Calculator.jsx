@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiClock, FiCalendar } from 'react-icons/fi';
-import { FaCar } from 'react-icons/fa'; // Используем иконку из FontAwesome
+import { FaCar } from 'react-icons/fa';
 import './Calculator.css';
 
 const Calculator = () => {
@@ -10,15 +10,15 @@ const Calculator = () => {
   const [total, setTotal] = useState(0);
 
   const cars = [
-    { id: 1, model: 'Toyota Corolla (Эконом)', price: 199 },
-    { id: 2, model: 'Volkswagen Golf (Комфорт)', price: 399 },
-    { id: 3, model: 'BMW 5 Series (Бизнес)', price: 799 }
+    { id: 1, model: 'Toyota Corolla (Economy)', price: 199 },
+    { id: 2, model: 'Volkswagen Golf (Comfort)', price: 399 },
+    { id: 3, model: 'BMW 5 Series (Business)', price: 799 }
   ];
 
   const calculateTotal = () => {
     const selectedCarData = cars.find(car => car.model === selectedCar);
     if (!selectedCarData) return 0;
-    
+
     const hourlyRate = selectedCarData.price;
     const dailyRate = hourlyRate * 10;
     return (hours * hourlyRate) + (days * dailyRate);
@@ -32,23 +32,23 @@ const Calculator = () => {
   return (
     <section className="calculator" id="calculator">
       <div className="container">
-        <h2>Калькулятор аренды</h2>
-        <p className="subtitle">Рассчитайте стоимость аренды автомобиля</p>
+        <h2>Rental Calculator</h2>
+        <p className="subtitle">Calculate your car rental cost</p>
 
         <form onSubmit={handleSubmit} className="calculator-form">
           <div className="form-group">
             <label>
-              <FaCar className="icon" /> Выберите автомобиль:
+              <FaCar className="icon" /> Select a car:
             </label>
-            <select 
-              value={selectedCar} 
+            <select
+              value={selectedCar}
               onChange={(e) => setSelectedCar(e.target.value)}
               required
             >
-              <option value="">-- Выберите модель --</option>
+              <option value="">-- Choose a model --</option>
               {cars.map(car => (
                 <option key={car.id} value={car.model}>
-                  {car.model} - {car.price}₽/час
+                  {car.model} - {car.price}₽/hour
                 </option>
               ))}
             </select>
@@ -57,7 +57,7 @@ const Calculator = () => {
           <div className="time-inputs">
             <div className="form-group">
               <label>
-                <FiClock className="icon" /> Часы:
+                <FiClock className="icon" /> Hours:
               </label>
               <input
                 type="number"
@@ -70,7 +70,7 @@ const Calculator = () => {
 
             <div className="form-group">
               <label>
-                <FiCalendar className="icon" /> Сутки:
+                <FiCalendar className="icon" /> Days:
               </label>
               <input
                 type="number"
@@ -82,14 +82,14 @@ const Calculator = () => {
           </div>
 
           <button type="submit" className="calculate-btn">
-            Рассчитать стоимость
+            Calculate Cost
           </button>
 
           {total > 0 && (
             <div className="result">
-              <h3>Итоговая стоимость:</h3>
+              <h3>Total Cost:</h3>
               <div className="total-price">{total}₽</div>
-              <p className="note">*Окончательная цена может отличаться</p>
+              <p className="note">*Final price may vary</p>
             </div>
           )}
         </form>

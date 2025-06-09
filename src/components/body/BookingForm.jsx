@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import sendBooking from './data/data';
+import sendBooking from './data/data.js';
 
 const BookingForm = () => {
    const [formData, setFormData] = useState(() => {

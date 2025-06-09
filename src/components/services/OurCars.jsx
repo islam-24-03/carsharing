@@ -67,7 +67,7 @@ const OurCars = () => {
                            />
                            <h3>{car.title}</h3>
                            <p>{car.shortDescription}</p>
-                           <button onClick={() => setSelectedCar(car)}>Подробнее</button>
+                           <button onClick={() => setSelectedCar(car)}>More details</button>
                         </div>
                      );
                   })
@@ -80,9 +80,9 @@ const OurCars = () => {
                <button
                   onClick={handleNextPage}
                   disabled={pageIndex + 1 >= maxPages}
-                  title={pageIndex + 1 >= maxPages ? "Больше машин нет" : "Показать еще"}
+                  title={pageIndex + 1 >= maxPages ? "No more cars" : "Show more"}
                >
-                  Показать еще
+                  Show more
                </button>
             </div>
 
@@ -98,10 +98,10 @@ const OurCars = () => {
                      />
                      <h3>{selectedCar.title}</h3>
                      <p>{selectedCar.description}</p>
-                     <p><strong>Status:</strong> {selectedCar.isBooked ? "Занята" : "Свободна"}</p>
+                     <p><strong>Status:</strong> {selectedCar.isBooked ? "Booked" : "Available"}</p>
                      <ul>
                         <li><strong>Year:</strong> {selectedCar.year}</li>
-                        <li><strong>Price per day:</strong> {selectedCar.price} сом</li>
+                        <li><strong>Price per day:</strong> {selectedCar.price} KGS</li>
                         <li><strong>Fuel type:</strong> {selectedCar.fuel}</li>
                         <li><strong>Transmission:</strong> {selectedCar.transmission}</li>
                      </ul>

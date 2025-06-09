@@ -1,3 +1,4 @@
+// src/data/data.js
 const sendBooking = async (data) => {
    const response = await fetch("/api/book", {
       method: "POST",
