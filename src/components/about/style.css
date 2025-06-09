@@ -105,11 +105,11 @@
    .about-grid {
       grid-template-columns: 1fr;
    }
-   
+
    .about-section {
       padding: 32px 24px;
    }
-   
+
    .about-title {
       font-size: 2rem;
    }

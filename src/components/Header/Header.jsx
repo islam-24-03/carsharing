@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";  // импорт Link
 import './Header.css';
 
 const Header = () => {
@@ -35,7 +36,15 @@ const Header = () => {
                <a onClick={() => scrollToSection("about")} className="nav-link">About</a>
                <a onClick={() => scrollToSection("services")} className="nav-link">Services</a>
                <a onClick={() => scrollToSection("booking")} className="nav-link">Book Now</a>
-               <a onClick={() => scrollToSection("contact")} className="nav-link contact-link">Contact</a>
+
+               {/* Используем Link для перехода на /account */}
+               <Link
+                  to="/account"
+                  className="nav-link contact-link"
+                  onClick={() => setIsOpen(false)}
+               >
+                  Account
+               </Link>
             </div>
          </nav>
 

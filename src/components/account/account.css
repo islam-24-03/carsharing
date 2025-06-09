@@ -1,0 +1,72 @@
+/* src/pages/account/account.css */
+
+.account-container {
+   max-width: 600px;
+   margin: 40px auto;
+   padding: 30px 20px;
+   background-color: #f9f9f9;
+   border-radius: 10px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #333;
+}
+
+.account-container h1 {
+   text-align: center;
+   margin-bottom: 25px;
+   color: #2c3e50;
+}
+
+.account-info {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.account-info label {
+   font-weight: 600;
+   margin-bottom: 5px;
+}
+
+.account-info input,
+.account-info textarea {
+   padding: 10px 12px;
+   border: 1px solid #ccc;
+   border-radius: 6px;
+   font-size: 1rem;
+   transition: border-color 0.3s ease;
+}
+
+.account-info input:focus,
+.account-info textarea:focus {
+   border-color: #3498db;
+   outline: none;
+}
+
+.account-info textarea {
+   resize: vertical;
+   min-height: 80px;
+}
+
+.account-buttons {
+   margin-top: 25px;
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+
+.account-buttons button {
+   background-color: #3498db;
+   color: white;
+   border: none;
+   padding: 12px 25px;
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 1rem;
+   transition: background-color 0.3s ease;
+}
+
+.account-buttons button:hover {
+   background-color: #2980b9;
+}

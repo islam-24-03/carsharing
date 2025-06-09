@@ -1,0 +1,44 @@
+.admin-panel {
+   padding: 2rem;
+}
+
+.admin-table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 1rem;
+   font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+   border: 1px solid #ddd;
+   padding: 8px;
+   text-align: left;
+}
+
+.admin-table th {
+   background-color: #f4f4f4;
+}
+
+.book-btn {
+   background-color: #28a745;
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   cursor: pointer;
+   border-radius: 4px;
+}
+
+.unbook-btn {
+   background-color: #dc3545;
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   cursor: pointer;
+   border-radius: 4px;
+}
+
+.book-btn:hover,
+.unbook-btn:hover {
+   opacity: 0.85;
+}
